@@ -13,6 +13,8 @@ let init = async () => {
     await page.goto(`${loginurl}`, {
         waitUntil: 'load'
     });
+    await page.waitForSelector('button')
+    await page.waitForTimeout(3000)
 
     return page
 }
