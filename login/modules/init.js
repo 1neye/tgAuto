@@ -7,9 +7,11 @@ let loginurl = 'https://web.telegram.org/k/'
 let init = async () => {
     const browser = await puppeteer.launch({
         headless: false,
+        args: ['--proxy-server=http://176.103.61.193:11241']
     });
-
+    
     const page = await browser.newPage();
+    await page.authenticate({username:'Ineye', password:'qwerty321'});
     await page.goto(`${loginurl}`, {
         waitUntil: 'load'
     });
