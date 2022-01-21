@@ -14,8 +14,8 @@ let login = async () => {
 
     let page = await init()
     await LoginbyphoneNumberClick(page)
-    // await typeNubmer(page, number)
-    // await typeSmsCode(page)
+    await typeNubmer(page, number)
+    await typeSmsCode(page)
     await coockieSave(page, number)
 }
 
