@@ -4,7 +4,7 @@ const getPage = require(path.join(__dirname, '/modules/getPage'));
 const setStore = require(path.join(__dirname, '/modules/setStore'));
 const checkLogin = require(path.join(__dirname, '/modules/checkLogin'));
 
-let store = async (behavior = false) => {
+let store = async (behavior) => {
     let browser = await getBrowser()
     let page = await getPage(browser)
     await setStore(page)
