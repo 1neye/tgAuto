@@ -9,11 +9,18 @@ let store = async (behavior) => {
     let page = await getPage(browser)
     await setStore(page)
     let pass = await checkLogin(page)
-    if(!behavior || !pass) await browser.close()
+    // if(!behavior || !pass) await browser.close()
+
+    let store = {
+        page: page,
+        browser: browser
+    }
+
+    return store
 }
 
 
 
-store()
+// store()
 
 module.exports = store

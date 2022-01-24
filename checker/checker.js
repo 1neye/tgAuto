@@ -2,15 +2,17 @@ const path = require('path');
 
 const store = require(path.join(__dirname, '../checkStore/store'));
 const getContacts = require(path.join(__dirname, './modules/getContacts'));
+const tgClicks = require(path.join(__dirname, './modules/tgClicks'));
 
 let checker = async () => {
-    await store(true)
+
+    phone = '380955617914'
+
+    let data = await store(true)
     await getContacts()
+    await tgClicks(data.page, phone)
 }
-//sidebar-header__btn-container
-// document.querySelector('.tgico-user)
-// document.querySelector('button.btn-corner')
-// document.querySelector('.input-field-phone > .input-field-input') inner phone
-// document.querySelector('.name-fields > .input-field > .input-field-input') inner phone
-// document.querySelector('.popup-header > .btn-primary') click add
+
+checker()
+//.popup-create-contact check if null it means that contact added
 module.exports = checker

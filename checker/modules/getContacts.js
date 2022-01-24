@@ -10,7 +10,7 @@ let getContacts = async () => {
     let contacts = []
     for(let el of contactsObj) {
         let obj = el
-        arr.push(obj.phone)
+        contacts.push(obj.phone)
     }
 
     return contacts
